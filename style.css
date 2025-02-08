@@ -3,10 +3,9 @@ body {
   font-size: 1rem;
   background-color: black;
   color: white;
-  
 }
 
-.container *{
+.container * {
   user-select: none;
 }
 
@@ -23,17 +22,16 @@ body {
 }
 
 .option-button {
-  border: 0.4vw solid white;
+  border: 0.2em solid white;
   background-color: transparent;
-  margin: 2vw;
-  padding: 3.5vw;
+  margin: 2em;
+  padding: 2em;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .option-button img {
-  width: min(45px,5vw);
-  width: min(5vw);
+  width: min(5em, 5vw);
   object-fit: cover;
 }
 
