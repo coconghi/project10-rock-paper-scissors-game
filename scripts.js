@@ -18,37 +18,37 @@ function playGame(playerMove) {
   if (playerMove === "rock") {
     //rock
     if (computerMove === "rock") {
-      result = "Tie";
+      result = "Tie.";
     } else if (computerMove === "paper") {
-      result = "You lose";
+      result = "You lose.";
     } else if (computerMove === "scissors") {
-      result = "You win";
+      result = "You win.";
     }
   } else if (playerMove === "scissors") {
     //paper
     if (computerMove === "rock") {
-      result = "You lose";
+      result = "You lose.";
     } else if (computerMove === "paper") {
-      result = "You win";
+      result = "You win.";
     } else if (computerMove === "scissors") {
-      result = "Tie";
+      result = "Tie.";
     }
   } else if (playerMove === "paper") {
     //scissors
     if (computerMove === "rock") {
-      result = "You win";
+      result = "You win.";
     } else if (computerMove === "paper") {
-      result = "Tie";
+      result = "Tie.";
     } else if (computerMove === "scissors") {
-      result = "You lose";
+      result = "You lose.";
     }
   }
 
-  if (result === "You win") {
+  if (result === "You win.") {
     score.wins += 1;
-  } else if (result === "You lose") {
+  } else if (result === "You lose.") {
     score.losses += 1;
-  } else if (result === "Tie") {
+  } else if (result === "Tie.") {
     score.ties += 1;
   }
 
@@ -57,9 +57,7 @@ function playGame(playerMove) {
   // DOM
   updateScoreElement();
   document.querySelector(".js-result").innerHTML = result;
-  document.querySelector(
-    ".js-moves"
-  ).innerHTML = `You picked ${playerMove}. Computer picked ${computerMove}.`;
+  showResult(playerMove, computerMove);
 }
 
 //   DOM
@@ -67,6 +65,15 @@ function updateScoreElement() {
   document.querySelector(
     ".js-score"
   ).innerHTML = `Wins: ${score.wins}; Losses: ${score.losses}; Ties: ${score.ties}`;
+}
+
+function showResult(playerMove, computerMove) {
+  document.querySelector(
+    ".js-moves-you"
+  ).innerHTML = `You <img src="./images/${playerMove}-emoji.png" alt="${playerMove}">`;
+  document.querySelector(
+    ".js-moves-computer"
+  ).innerHTML = `<img src="./images/${computerMove}-emoji.png" alt="${computerMove}"> Computer`;
 }
 
 // computer randomly selects a move

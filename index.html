@@ -8,29 +8,40 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <p>Rock Paper Scissors</p>
-    <!-- rock -->
-    <button onclick="playGame('rock')">Rock</button>
-    <!-- paper -->
-    <button onclick="playGame('paper')">Paper</button>
-    <!-- scissors -->
-    <button onclick=" playGame('scissors')">Scissors</button>
-    <!-- result -->
-    <p class="js-result"></p>
-    <p class="js-moves"></p>
-    <!-- score-->
-    <p class="js-score"></p>
-    <!-- reset -->
-    <button
-      onclick="
-    score.wins=0;score.losses=0,score.ties=0
-    localStorage.removeItem('scores')
-    updateScoreElement();
-    "
-    >
-      Reset Score
-    </button>
-
+    <div class="container">
+      <p class="heading">Rock Paper Scissors</p>
+      <!-- rock -->
+      <button onclick="playGame('rock')" class="option-button">
+        <img src="./images/rock-emoji.png" alt="Rock" />
+      </button>
+      <!-- paper -->
+      <button onclick="playGame('paper')" class="option-button">
+        <img src="./images/paper-emoji.png" alt="Paper" />
+      </button>
+      <!-- scissors -->
+      <button onclick=" playGame('scissors')" class="option-button">
+        <img src="./images/scissors-emoji.png" alt="Scissors" />
+      </button>
+      <!-- result -->
+      <p class="js-result result"></p>
+      <div class="moves">
+        <p class="js-moves-you"></p>
+        <p class="js-moves-computer"></p>
+      </div>
+      <!-- score-->
+      <p class="js-score"></p>
+      <!-- reset -->
+      <button
+        onclick="
+      score.wins=0;score.losses=0,score.ties=0
+      localStorage.removeItem('scores')
+      updateScoreElement();
+      "
+        class="reset-button"
+      >
+        Reset Score
+      </button>
+    </div>
     <!-- js -->
     <script src="scripts.js"></script>
   </body>
